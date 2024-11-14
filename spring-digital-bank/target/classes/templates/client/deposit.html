@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Depositar</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Depositar</h1>
+    <form th:action="@{/client/deposit}" method="post">
+        <div class="mb-3">
+            <label for="amount" class="form-label">Valor a Depositar</label>
+            <input type="number" class="form-control" id="amount" name="amount" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Depositar</button>
+    </form>
+</div>
+</body>
+</html>

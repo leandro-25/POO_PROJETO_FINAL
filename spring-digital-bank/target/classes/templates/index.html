@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Banco Digital</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Bem-vindo ao Banco Digital</h1>
+    <a class="btn btn-primary" th:href="@{/client/open-account}">Abrir Conta</a>
+    <a class="btn btn-secondary" th:href="@{/admin/manage-clients}">Gerenciar Clientes</a>
+</div>
+</body>
+</html>

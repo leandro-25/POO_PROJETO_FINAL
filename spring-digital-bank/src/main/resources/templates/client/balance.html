@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultar Saldo</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+</head>
+<body>
+<div class="container">
+    <h1>Consultar Saldo</h1>
+    <p th:text="'Seu saldo é: R$ ' + ${client.balance}"></p>
+    <a class="btn btn-primary" th:href="@{/client/deposit}">Depositar</a>
+    <a class="btn btn-primary" th:href="@{/client/withdraw}">Sacar</a>
+    <a class="btn btn-primary" th:href="@{/client/transfer}">Transferir</a>
+</div>
+</body>
+</html>
