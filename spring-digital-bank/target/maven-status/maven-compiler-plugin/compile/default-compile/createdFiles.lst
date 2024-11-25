@@ -1,9 +1,0 @@
-com\example\springdigitalbank\service\ClientService.class
-com\example\springdigitalbank\controller\ClientController.class
-com\example\springdigitalbank\repository\ClientRepository.class
-com\example\springdigitalbank\repository\TransactionRepository.class
-com\example\springdigitalbank\SpringDigitalBankApplication.class
-com\example\springdigitalbank\model\Transaction.class
-com\example\springdigitalbank\service\AdminService.class
-com\example\springdigitalbank\model\Client.class
-com\example\springdigitalbank\controller\AdminController.class
