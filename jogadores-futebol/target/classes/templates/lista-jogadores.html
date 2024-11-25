@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Jogadores</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Lista de Jogadores</h1>
+    <a class="btn btn-primary mb-3" th:href="@{/jogadores-view/novo}">Adicionar Novo Jogador</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Posição</th>
+            <th>Disponibilidade</th>
+            <th>Salário</th>
+            <th>Clubes Anteriores</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="jogador : ${jogadores}">
+            <td th:text="${jogador.id}"></td>
+            <td th:text="${jogador.nome}"></td>
+            <td th:text="${jogador.idade}"></td>
+            <td th:text="${jogador.posicao}"></td>
+            <td th:text="${jogador.disponibilidade}"></td>
+            <td th:text="${jogador.salario}"></td>
+            <td th:text="${jogador.clubesAnteriores}"></td>
+            <td>
+                <a class="btn btn-warning btn-sm" th:href="@{/jogadores-view/editar/{id}(id=${jogador.id})}">Editar</a>
+                <a class="btn btn-danger btn-sm" th:href="@{/jogadores-view/deletar/{id}(id=${jogador.id})}">Deletar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

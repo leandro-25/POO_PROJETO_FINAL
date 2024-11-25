@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Formulário de Jogador</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 th:text="${jogador.id == null ? 'Adicionar Jogador' : 'Editar Jogador'}"></h1>
+    <form th:action="@{/jogadores-view/salvar}" th:object="${jogador}" method="post">
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" name="nome" th:field="*{nome}" required>
+        </div>
+        <div class="mb-3">
+            <label for="idade" class="form-label">Idade</label>
+            <input type="number" class="form-control" id="idade" name="idade" th:field="*{idade}" required>
+        </div>
+        <div class="mb-3">
+            <label for="posicao" class="form-label">Posição</label>
+            <input type="text" class="form-control" id="posicao" name="posicao" th:field="*{posicao}" required>
+        </div>
+        <div class="mb-3">
+            <label for="disponibilidade" class="form-label">Disponibilidade</label>
+            <input type="text" class="form-control" id="disponibilidade" name="disponibilidade"
+                   th:field="*{disponibilidade}" required>
+        </div>
+        <div class="mb-3">
+            <label for="salario" class="form-label">Salário</label>
+            <input type="number" class="form-control" id="salario" name="salario" th:field="*{salario}" required>
+        </div>
+        <div class="mb-3">
+            <label for="clubesAnteriores" class="form-label">Clubes Anteriores</label>
+            <input type="text" class="form-control" id="clubesAnteriores" name="clubesAnteriores"
+                   th:field="*{clubesAnteriores}">
+        </div>
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a class="btn btn-secondary" th:href="@{/jogadores-view}">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>
