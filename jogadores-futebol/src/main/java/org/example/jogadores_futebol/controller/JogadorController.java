@@ -14,38 +14,71 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controlador REST para gerenciar jogadores de futebol.
+ * Oferece endpoints para CRUD (Create, Read, Update, Delete).
+ */
 @RestController
 @RequestMapping("/jogadores")
 public class JogadorController {
 
     private final JogadorService jogadorService;
 
+    /**
+     * Construtor da classe JogadorController.
+     *
+     * @param jogadorService Serviço responsável por manipular as operações com jogadores.
+     */
     public JogadorController(JogadorService jogadorService) {
         this.jogadorService = jogadorService;
     }
 
+    /**
+     * Lista todos os jogadores cadastrados.
+     *
+     * @return Lista de jogadores.
+     */
     @GetMapping
     public List<Jogador> listarTodos() {
         return jogadorService.listarTodos();
     }
 
+    /**
+     * Salva um novo jogador no sistema.
+     *
+     * @param jogador Objeto jogador a ser salvo.
+     * @return Jogador salvo, encapsulado em uma ResponseEntity.
+     */
     @PostMapping
     public ResponseEntity<Jogador> salvar(@RequestBody Jogador jogador) {
         Jogador jogadorSalvo = jogadorService.salvar(jogador);
         return ResponseEntity.ok(jogadorSalvo);
     }
 
+    /**
+     * Busca um jogador pelo ID.
+     *
+     * @param id Identificador único do jogador.
+     * @return Jogador encontrado, encapsulado em uma ResponseEntity.
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Jogador> buscarPorId(@PathVariable Long id) {
         Jogador jogador = jogadorService.buscarPorId(id);
         return ResponseEntity.ok(jogador);
     }
 
+    /**
+     * Atualiza os dados de um jogador existente.
+     *
+     * @param id                Identificador único do jogador a ser atualizado.
+     * @param jogadorAtualizado Objeto contendo os novos dados do jogador.
+     * @return Jogador atualizado, encapsulado em uma ResponseEntity, ou 404 se o jogador não for encontrado.
+     */
     @PutMapping("/{id}")
     public ResponseEntity<Jogador> atualizar(@PathVariable Long id, @RequestBody Jogador jogadorAtualizado) {
         Jogador jogadorExistente = jogadorService.buscarPorId(id);
         if (jogadorExistente == null) {
-            return ResponseEntity.notFound().build();  // Retorna 404 se o jogador não existir
+            return ResponseEntity.notFound().build(); // Retorna 404 se o jogador não existir
         }
         jogadorExistente.setNome(jogadorAtualizado.getNome());
         jogadorExistente.setIdade(jogadorAtualizado.getIdade());
@@ -56,8 +89,13 @@ public class JogadorController {
         Jogador jogadorSalvo = jogadorService.salvar(jogadorExistente);
         return ResponseEntity.ok(jogadorSalvo);
     }
-    
 
+    /**
+     * Deleta um jogador pelo ID.
+     *
+     * @param id Identificador único do jogador a ser deletado.
+     * @return Resposta vazia (204 No Content) ao concluir a exclusão.
+     */
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Long id) {
         jogadorService.deletar(id);
