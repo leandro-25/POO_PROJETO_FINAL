@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.example.jogadores_futebol"},{"l":"org.example.jogadores_futebol.controller"},{"l":"org.example.jogadores_futebol.model"},{"l":"org.example.jogadores_futebol.repository"},{"l":"org.example.jogadores_futebol.service"}];updateSearchResults();

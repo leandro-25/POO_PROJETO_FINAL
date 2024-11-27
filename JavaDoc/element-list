@@ -1,0 +1,5 @@
+org.example.jogadores_futebol
+org.example.jogadores_futebol.controller
+org.example.jogadores_futebol.model
+org.example.jogadores_futebol.repository
+org.example.jogadores_futebol.service
