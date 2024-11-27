@@ -46,6 +46,10 @@ Este repositório contém um sistema CRUD (Create, Read, Update, Delete) para ge
 - **GET** `/jogadores-view/editar/{id}`: Exibe o formulário para editar um jogador.
 - **GET** `/jogadores-view/deletar/{id}`: Deleta um jogador e redireciona para a lista.
 
+## SWAGGER da API
+
+http://localhost:8080/swagger-ui/index.html#/
+
 ## Estrutura do Projeto
 O projeto é organizado nas seguintes pastas principais:
 
