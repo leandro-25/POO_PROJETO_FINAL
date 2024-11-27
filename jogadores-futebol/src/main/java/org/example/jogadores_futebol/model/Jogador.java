@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
  * Representa um jogador de futebol com informações sobre seu perfil, posição,
@@ -21,6 +22,7 @@ public class Jogador {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(hidden = true)
     private Long id;
 
     /**
