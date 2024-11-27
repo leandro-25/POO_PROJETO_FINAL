@@ -1,33 +1,43 @@
 # POO_PROJETO_FINAL
 
-Um sistema CRUD (Create, Read, Update, Delete) desenvolvido para gerenciar informações de jogadores de futebol, utilizando conceitos de Programação Orientada a Objetos (POO) e o framework Spring.
+Um sistema CRUD (Create, Read, Update, Delete) para gerenciamento de jogadores de futebol, desenvolvido com **Java**, utilizando **Spring Framework** para a lógica de negócios e **MySQL** como banco de dados relacional. Este projeto aplica conceitos de Programação Orientada a Objetos (POO) em um ambiente Full Stack.
 
 ## Funcionalidades
 
 - **Adicionar Jogadores**: Insere novos jogadores no sistema.
-- **Visualizar Jogadores**: Lista jogadores cadastrados.
-- **Atualizar Informações**: Permite editar os dados de um jogador.
+- **Visualizar Jogadores**: Lista jogadores cadastrados com seus detalhes.
+- **Atualizar Informações**: Permite editar os dados de um jogador, como salário, posição e status.
 - **Remover Jogadores**: Exclui jogadores do sistema.
+- **Gerenciamento Avançado**: Integração com banco de dados para armazenar todas as informações de forma persistente.
 
 ### Campos do Jogador
 
-- **ID**: Identificação única do jogador, permanece inalterado.
-- **Nome do Jogador** (Product Name): Nome completo do jogador.
-- **Time de Futebol** (Brand): Time atual em que o jogador atua.
-- **Status do Jogador** (Made in): Situação do jogador (Indisponível, À venda, Emprestado, Livre no Mercado).
-- **Passe do Jogador** (Price): Valor de mercado do passe do jogador.
-- **Salário do Jogador** (Novo): Valor atual do salário do jogador.
-- **Posição** (Novo): Posição em que o jogador atua (Ex.: Atacante, Goleiro, etc.).
-- **Idade** (Novo): Idade do jogador.
+- **ID**: Identificação única do jogador.
+- **Nome do Jogador**: Nome completo.
+- **Time**: Nome do time ao qual o jogador pertence.
+- **Status**: Situação do jogador (Indisponível, À venda, Emprestado, Livre no mercado).
+- **Passe**: Valor de mercado do passe.
+- **Salário**: Remuneração mensal do jogador.
+- **Posição**: Posição no campo (Ex.: Atacante, Goleiro, etc.).
+- **Idade**: Idade do jogador.
 
 ## Tecnologias Utilizadas
 
-- **Java**
-- **Spring Framework**: Para gerenciamento de dependências e desenvolvimento eficiente.
-- Paradigma: Programação Orientada a Objetos (POO)
+- **Java**: Linguagem principal para a implementação.
+- **Spring Framework**: Para inversão de controle, injeção de dependência e desenvolvimento rápido.
+- **MySQL**: Banco de dados relacional para armazenamento de informações.
+- **Hibernate**: Para mapeamento objeto-relacional (ORM).
+- **Maven**: Gerenciador de dependências.
 
 ## Como Executar
 
+### Pré-requisitos
+- Java JDK 11+
+- MySQL instalado e configurado
+- Maven
+- IDE como IntelliJ IDEA ou Eclipse
+
+### Passos
 1. Clone este repositório:
    ```bash
    git clone https://github.com/leandro-25/POO_PROJETO_FINAL.git
