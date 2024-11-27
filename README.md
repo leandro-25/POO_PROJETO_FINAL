@@ -95,9 +95,9 @@ Este projeto está licenciado sob a MIT License. Veja o arquivo `LICENSE` para m
 ## Contato
 
 Para mais informações, você pode entrar em contato com o autor do projeto através do e-mail:
-gustavo.barros7@fatec.sp.gov.br
-leandro.mariano@fatec.sp.gov.br
-thiago.foganholo@fatec.sp.gov.br
+- gustavo.barros7@fatec.sp.gov.br
+- leandro.mariano@fatec.sp.gov.br
+- thiago.foganholo@fatec.sp.gov.br
 
 
 
