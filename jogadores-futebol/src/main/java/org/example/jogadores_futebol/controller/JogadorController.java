@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 /**
  * Controlador REST para gerenciar jogadores de futebol.
@@ -50,6 +53,11 @@ public class JogadorController {
      * @return Jogador salvo, encapsulado em uma ResponseEntity.
      */
     @PostMapping
+    @Operation(summary = "Salva um novo jogador", description = "Adiciona um novo jogador ao sistema.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Jogador salvo com sucesso"),
+            @ApiResponse(responseCode = "400", description = "Erro de validação nos dados do jogador")
+    })
     public ResponseEntity<Jogador> salvar(@RequestBody Jogador jogador) {
         Jogador jogadorSalvo = jogadorService.salvar(jogador);
         return ResponseEntity.ok(jogadorSalvo);
