@@ -11,14 +11,17 @@ import jakarta.persistence.Id;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 /**
- * Representa um jogador de futebol com informações sobre seu perfil, posição,
- * clubes anteriores e status no mercado.
+ * Classe que representa um jogador de futebol no sistema.
+ * <p>
+ * Contém informações sobre o nome, idade, posição, disponibilidade para transações
+ * (como compra ou venda), salário e clubes anteriores.
  */
 @Entity
 public class Jogador {
 
     /**
-     * Identificador único do jogador no banco de dados.
+     * Identificador único do jogador, gerado automaticamente pelo banco de dados.
+     * Este campo é oculto na documentação Swagger.
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,33 +41,30 @@ public class Jogador {
     private int idade;
 
     /**
-     * Posição do jogador em campo (exemplo: atacante, goleiro, zagueiro). Este
-     * campo é obrigatório.
+     * Posição do jogador em campo (exemplo: "Atacante", "Goleiro"). Este campo é obrigatório.
      */
     @Column(nullable = false)
     private String posicao;
 
     /**
-     * Disponibilidade do jogador no mercado. Pode assumir valores como "Compra",
-     * "Venda", "Empréstimo" ou "Livre". Este campo é obrigatório.
+     * Disponibilidade do jogador para transações. Exemplos: "Compra", "Venda", "Empréstimo", "Livre".
+     * Este campo é obrigatório.
      */
     @Column(nullable = false)
     private String disponibilidade;
 
     /**
-     * Salário do jogador em uma unidade monetária específica. Este campo é
-     * obrigatório.
+     * Salário atual do jogador. Este campo é obrigatório.
      */
     @Column(nullable = false)
     private double salario;
 
     /**
-     * Lista de clubes pelos quais o jogador já passou em sua carreira.
+     * Histórico de clubes anteriores do jogador, armazenado como uma string delimitada por vírgulas.
+     * Este campo é obrigatório.
      */
-    @ElementCollection
-    private List<String> clubesAnteriores;
-
-    // Getters e Setters
+    @Column(nullable = false)
+    private String clubesAnteriores;
 
     /**
      * Obtém o identificador único do jogador.
@@ -139,7 +139,7 @@ public class Jogador {
     }
 
     /**
-     * Obtém o status de disponibilidade do jogador no mercado.
+     * Obtém a disponibilidade do jogador para transações.
      *
      * @return Disponibilidade do jogador.
      */
@@ -148,7 +148,7 @@ public class Jogador {
     }
 
     /**
-     * Define o status de disponibilidade do jogador no mercado.
+     * Define a disponibilidade do jogador para transações.
      *
      * @param disponibilidade Disponibilidade do jogador.
      */
@@ -157,7 +157,7 @@ public class Jogador {
     }
 
     /**
-     * Obtém o salário atual do jogador.
+     * Obtém o salário do jogador.
      *
      * @return Salário do jogador.
      */
@@ -166,7 +166,7 @@ public class Jogador {
     }
 
     /**
-     * Define o salário atual do jogador.
+     * Define o salário do jogador.
      *
      * @param salario Salário do jogador.
      */
@@ -175,20 +175,45 @@ public class Jogador {
     }
 
     /**
-     * Obtém a lista de clubes pelos quais o jogador já passou.
+     * Obtém o histórico de clubes anteriores do jogador como uma string.
      *
-     * @return Lista de clubes anteriores.
+     * @return Histórico de clubes anteriores.
      */
-    public List<String> getClubesAnteriores() {
+    public String getClubesAnteriores() {
         return clubesAnteriores;
     }
 
     /**
-     * Define a lista de clubes pelos quais o jogador já passou.
+     * Define o histórico de clubes anteriores do jogador como uma string.
      *
-     * @param clubesAnteriores Lista de clubes anteriores.
+     * @param clubesAnteriores Histórico de clubes anteriores.
      */
-    public void setClubesAnteriores(List<String> clubesAnteriores) {
+    public void setClubesAnteriores(String clubesAnteriores) {
         this.clubesAnteriores = clubesAnteriores;
+    }
+
+    /**
+     * Adiciona um novo clube ao histórico de clubes anteriores do jogador.
+     *
+     * @param clube Nome do clube a ser adicionado.
+     */
+    public void adicionarClubeAnterior(String clube) {
+        if (this.clubesAnteriores == null || this.clubesAnteriores.isEmpty()) {
+            this.clubesAnteriores = clube;
+        } else {
+            this.clubesAnteriores += "," + clube;
+        }
+    }
+
+    /**
+     * Obtém os clubes anteriores do jogador como um array de strings.
+     *
+     * @return Array contendo os nomes dos clubes anteriores.
+     */
+    public String[] obterClubesAnteriores() {
+        if (this.clubesAnteriores != null && !this.clubesAnteriores.isEmpty()) {
+            return this.clubesAnteriores.split(",");
+        }
+        return new String[0];
     }
 }

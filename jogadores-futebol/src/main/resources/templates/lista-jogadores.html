@@ -36,36 +36,36 @@
     <div class="table-responsive">
         <table class="table table-striped table-hover table-bordered">
             <thead class="thead-dark">
-                <tr>
-                   <!-- <th>ID</th>-->
-                    <th>Nome</th>
-                    <th>Idade</th>
-                    <th>Posição</th>
-                    <th>Disponibilidade</th>
-                    <th>Salário</th>
-                    <th>Clubes Anteriores</th>
-                    <th>Ações</th>
-                </tr>
+            <tr>
+                <!-- <th>ID</th>-->
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Posição</th>
+                <th>Disponibilidade</th>
+                <th>Salário</th>
+                <th>Clubes Anteriores</th>
+                <th>Ações</th>
+            </tr>
             </thead>
             <tbody>
-                <tr th:each="jogador : ${jogadores}">
-                   <!-- <td th:text="${jogador.id}"></td>-->
-                    <td th:text="${jogador.nome}"></td>
-                    <td th:text="${jogador.idade}"></td>
-                    <td th:text="${jogador.posicao}"></td>
-                    <td th:text="${jogador.disponibilidade}"></td>
-                    <td th:text="${jogador.salario}"></td>
-                    <td th:text="${jogador.clubesAnteriores}"></td>
-                    <td>
-                        <!-- Botões de Ação com ícones -->
-                        <a class="btn btn-warning btn-sm" th:href="@{/jogadores-view/editar/{id}(id=${jogador.id})}">
-                            <i class="oi oi-pencil"></i> Editar
-                        </a>
-                        <a class="btn btn-danger btn-sm" th:href="@{/jogadores-view/deletar/{id}(id=${jogador.id})}">
-                            <i class="oi oi-trash"></i> Deletar
-                        </a>
-                    </td>
-                </tr>
+            <tr th:each="jogador : ${jogadores}">
+                <!-- <td th:text="${jogador.id}"></td>-->
+                <td th:text="${jogador.nome}"></td>
+                <td th:text="${jogador.idade}"></td>
+                <td th:text="${jogador.posicao}"></td>
+                <td th:text="${jogador.disponibilidade}"></td>
+                <td th:text="${jogador.salario}"></td>
+                <td th:text="${jogador.clubesAnteriores}"></td>
+                <td>
+                    <!-- Botões de Ação com ícones -->
+                    <a class="btn btn-warning btn-sm" th:href="@{/jogadores-view/editar/{id}(id=${jogador.id})}">
+                        <i class="oi oi-pencil"></i> Editar
+                    </a>
+                    <a class="btn btn-danger btn-sm" th:href="@{/jogadores-view/deletar/{id}(id=${jogador.id})}">
+                        <i class="oi oi-trash"></i> Deletar
+                    </a>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>
