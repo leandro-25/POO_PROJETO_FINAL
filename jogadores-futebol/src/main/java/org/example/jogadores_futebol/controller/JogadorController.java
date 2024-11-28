@@ -19,7 +19,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 /**
  * Controlador REST para gerenciar jogadores de futebol.
- * Oferece endpoints para CRUD (Create, Read, Update, Delete).
+ * Oferece Endpoints para CRUD (Create, Read, Update, Delete).
  */
 @RestController
 @RequestMapping("/jogadores")
