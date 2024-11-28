@@ -6,7 +6,7 @@ Este repositório contém um sistema CRUD (Create, Read, Update, Delete) para ge
 - **Java**: Linguagem de programação principal.
 - **Spring Boot**: Framework para desenvolvimento de aplicações Java.
 - **Spring Data JPA**: Para interação com o banco de dados usando JPA (Java Persistence API).
-- **H2 Database**: Banco de dados em memória para desenvolvimento e testes.
+- **MySQL**: Banco de dados para desenvolvimento.
 - **Thymeleaf**: Motor de template para renderização de páginas HTML.
 - **Maven**: Gerenciador de dependências e construção de projetos.
 
