@@ -1,9 +1,6 @@
 package org.example.jogadores_futebol.model;
 
-import java.util.List;
-
 import jakarta.persistence.Column;
-import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -192,28 +189,4 @@ public class Jogador {
         this.clubesAnteriores = clubesAnteriores;
     }
 
-    /**
-     * Adiciona um novo clube ao histórico de clubes anteriores do jogador.
-     *
-     * @param clube Nome do clube a ser adicionado.
-     */
-    public void adicionarClubeAnterior(String clube) {
-        if (this.clubesAnteriores == null || this.clubesAnteriores.isEmpty()) {
-            this.clubesAnteriores = clube;
-        } else {
-            this.clubesAnteriores += "," + clube;
-        }
-    }
-
-    /**
-     * Obtém os clubes anteriores do jogador como um array de strings.
-     *
-     * @return Array contendo os nomes dos clubes anteriores.
-     */
-    public String[] obterClubesAnteriores() {
-        if (this.clubesAnteriores != null && !this.clubesAnteriores.isEmpty()) {
-            return this.clubesAnteriores.split(",");
-        }
-        return new String[0];
-    }
 }
