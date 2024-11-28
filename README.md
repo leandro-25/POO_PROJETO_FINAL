@@ -71,7 +71,7 @@ O projeto é organizado nas seguintes pastas principais:
 - Java JDK 11+
 - MySQL instalado e configurado
 - Maven
-- IDE como IntelliJ IDEA ou Eclipse
+- IDE como IntelliJ IDEA, Eclipse ou VScode
 
 ## Instruções de Instalação
 
